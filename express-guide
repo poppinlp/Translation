@@ -37,7 +37,7 @@
 	  ├─┬ response-send@0.0.1
 	  │ └── crc@0.2.0
 	  └─┬ send@0.0.3
-	  	└── mime@1.2.6							
+	    └── mime@1.2.6							
 
 	现在我们来创建应用本身吧。首先根据你的喜好创建一个叫做app.js或者server.js的文件，然后通过express()来创建一个应用：
 	var express = require('express');
