@@ -1,0 +1,117 @@
+一.开始
+
+	在安装了node的情况下，通过在你的电脑中任意一个位置创建一个目录来开始我们的express之旅。如
+	$ mkdir hello-world
+
+	现在，你就可以开始开发属于自己的node包啦。首先，你需要根据express的要求创建一个package.json文件。你可以使用npm info express version来查看最新的express版本。为了防止以后的兼容性问题，我们推荐你不要使用3.x以下的版本。下面是一个package.json的例子。
+	{
+		"name": "hello-world",
+	    "description": "hello world test app",
+		"version": "0.0.1",
+		"private": true,
+		"dependencies": {
+			"express": "3.x"
+		}
+	}
+
+	在拥有了一个package.json文件后，你便可以使用下面的方法来自动安装依赖的node包，在这个例子中只有express：
+	$ npm install
+
+	在npm安装结束后，你便能在当前目录下发现一个叫做node_modules的目录，里面便是刚才安装的node包。你可以通过npm ls命令来查看node包之间的依赖关系，会显示如下的树状图
+	$ npm ls
+	hello-world@0.0.1 /private/tmp
+	└─┬ express@3.0.0beta7
+	  ├── commander@0.6.1
+	  ├─┬ connect@2.3.9
+	  │ ├── bytes@0.1.0
+ 	  │ ├── cookie@0.0.4
+	  │ ├── crc@0.2.0
+	  │ ├── formidable@1.0.11
+	  │ └── qs@0.4.2
+      ├── cookie@0.0.3
+	  ├── debug@0.7.0
+      ├── fresh@0.1.0
+	  ├── methods@0.0.1
+      ├── mkdirp@0.3.3
+	  ├── range-parser@0.0.4
+      ├─┬ response-send@0.0.1
+	  │ └── crc@0.2.0
+      └─┬ send@0.0.3
+        └── mime@1.2.6							
+
+	现在我们来创建应用本身吧。首先根据你的喜好创建一个叫做app.js或者server.js的文件，然后通过express()来创建一个应用：
+	var express = require('express');
+	var app = express();
+
+	在应用中你可以通过app.VERB()来设置路由。如在下面这个例子中"get /"会回应"Hello World"字符串，其中req和res都是node提供给你的对象，所以你可以调用res.pipe(),req.on('data', callback)或者其他的任何与express无关的方法。
+	app.get('/hello.txt', function(req, res){
+		var body = 'Hello World';
+	    res.setHeader('Content-Type', 'text/plain');
+		res.setHeader('Content-Length', body.length);
+		res.end(body);
+	});
+
+	但express给这些参数赋予了更高级的方法。比如res.send()，这个方法除了其他的功能还会自动的为你添加Content-Length：
+	app.get('/hello.txt', function(req, res){
+		res.send('Hello World');
+	});
+
+	现在我们通过调用app.listen()方法来监听用户的链接吧，这个方法和node的net.Server#listen()方法接受同样的参数：
+	app.listen(3000);
+	console.log('Listening on port 3000');
+
+二.使用express来开发一个应用
+
+	express绑定了一个友好的可执行的工具express()。如果你是通过下面这种全局的方式来安装express的，你便可以在机器的任何地方使用它：
+	$ npm install -g express
+
+	这个工具提供了一种很简单的方式来创建应用的框架，但同样也有些限制。比如它只支持一部分模板引擎，而express则支持所有node上的模板引擎。详情可以通过--help来确认：
+	Usage: express [options]
+	Options:
+	-h, --help          output usage information
+	-V, --version       output the version number
+	-s, --sessions      add session support
+	-e, --ejs           add ejs engine support (defaults to jade)
+	-J, --jshtml        add jshtml engine support (defaults to jade)
+	-H, --hogan         add hogan.js engine support
+	-c, --css   add stylesheet  support (less|stylus) (defaults to plain css)
+	-f, --force         force on non-empty directory
+
+	如果你想使用EJS来开发一个支持session功能的应用，你只需要执行：
+	$ express --sessions --css stylus --ejs myapp
+	create : myapp
+	create : myapp/package.json
+	create : myapp/app.js
+	create : myapp/public
+	create : myapp/public/javascripts
+	create : myapp/public/images
+	create : myapp/public/stylesheets
+	create : myapp/public/stylesheets/style.styl
+	create : myapp/routes
+	create : myapp/routes/index.js
+	create : myapp/views
+	create : myapp/views/index.ejs
+	install dependencies:
+	$ cd myapp && npm install
+	run the app:
+	$ node app 
+	
+	像其他node应用一样，你必须安装它的依赖node包：
+	$ cd myapp
+	$ npm install
+
+	然后，对你的应用说"走你"：
+	$ node app
+
+	这就是运行一个简单的应用你需要做的所有事情。请记住express没有绑定到任何特定的目录结构，这些都只是你工作的开始。想获取更多应用框架，请去下面这个网址寻找。
+	https://github.com/visionmedia/express/tree/master/examples
+
+三.处理错误
+
+	"错误处理"的middleware在定义上和普通的middleware并无区别，不过它必须包含4个参数(err, req, res, next)：
+	app.use(function(err, req, res, next){
+		console.error(err.stack);
+		res.send(500, 'Something broke!');
+	});
+
+
