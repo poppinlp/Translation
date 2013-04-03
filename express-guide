@@ -6,7 +6,7 @@
 	现在，你就可以开始开发属于自己的node包啦。首先，你需要根据express的要求创建一个package.json文件。你可以使用npm info express version来查看最新的express版本。为了防止以后的兼容性问题，我们推荐你不要使用3.x以下的版本。下面是一个package.json的例子。
 	{
 		"name": "hello-world",
-	    "description": "hello world test app",
+		"description": "hello world test app",
 		"version": "0.0.1",
 		"private": true,
 		"dependencies": {
@@ -44,15 +44,15 @@
 	var app = express();
 
 	在应用中你可以通过app.VERB()来设置路由。如在下面这个例子中"get /"会回应"Hello World"字符串，其中req和res都是node提供给你的对象，所以你可以调用res.pipe(),req.on('data', callback)或者其他的任何与express无关的方法。
-	app.get('/hello.txt', function(req, res){
+	app.get('/hello.txt', function(req, res) {
 		var body = 'Hello World';
-	    res.setHeader('Content-Type', 'text/plain');
+		res.setHeader('Content-Type', 'text/plain');
 		res.setHeader('Content-Length', body.length);
 		res.end(body);
 	});
 
 	但express给这些参数赋予了更高级的方法。比如res.send()，这个方法除了其他的功能还会自动的为你添加Content-Length：
-	app.get('/hello.txt', function(req, res){
+	app.get('/hello.txt', function(req, res) {
 		res.send('Hello World');
 	});
 
@@ -109,7 +109,7 @@
 三.错误处理
 
 	"错误处理"的中间件在定义上和普通的中间件并无区别，不过它必须包含4个参数(err, req, res, next)：
-	app.use(function(err, req, res, next){
+	app.use(function(err, req, res, next) {
 		console.error(err.stack);
 		res.send(500, 'Something broke!');
 	});
@@ -118,7 +118,7 @@
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(app.router);
-	app.use(function(err, req, res, next){
+	app.use(function(err, req, res, next) {
 		// logic
 	});
 
@@ -180,7 +180,7 @@
 	我们还需要一个获得最近一分钟里在线用户的中间件。如下面的代码，通过使用zrevrangebyscore并伴随着一个正无穷大的值，我们便能获取到1分钟内的最近用户。
 	app.use(function(req, res, next) {
 		var min = 60 * 1000;
-	    var ago = Date.now() - min;
+		var ago = Date.now() - min;
 		db.zrevrangebyscore('online', '+inf', ago, function(err, users) {
 			if (err) return next(err);
 			req.online = users;
