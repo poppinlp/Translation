@@ -1,31 +1,28 @@
 > 贡献者：梁鹏  
 > 翻译时间：2013年8月13日  
-> 原文来源：http://www.w3.org/TR/html-markup/head.html  
+> 原文来源：http://www.w3.org/TR/html-markup/label.html  
 > 原文作者：W3C  
-> 原文标题：head – document metadata container  
+> 原文标题：head – caption for a form control  
 
-#head
-head元素是一个文档metadata的集合，包括内联和外联的脚本和样式表。
+#label
+label元素通常是一个表单的控制单元的标题。
 
 ##支持的内容
-* title  
-_除非文档是以iframe形式被嵌入的，或者title以其它的形式提供了，否则title元素都是应该添加的。_
-* base
-* basefont
-* bgsound
-* link
-* meta
-* nextID
-* script
-* style
+包含[普通文字信息](http://www.w3.org/TR/html-markup/syntax.html#normal-character-data)的[修饰性元素](http://www.w3.org/TR/html-markup/common-models.html#common.elem.phrasing)
 
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
 _global attributes即任何通用的属性、事件和方法。_
+* for
+_该属性的值为将这个label作为标题的表单元素的id_
+* form [new]
+_该属性的值为想要被关联到的表单的id_
  
 ##额外的约束和警告
-head元素包含一个profile属性，该属性是一个由空格分隔的 URL 列表，这些 URL 包含着有关页面的元数据信息。  
-profile属性在HTML4中支持，但是在HTML5中被废弃了。所以当需要注册[meta extensions](http://wiki.whatwg.org/wiki/MetaExtensions)的时候，请直接申明在文档中需要用到的meta元素；当需要针对UA触发特定的行为的时候，用一个link元素代替。
+* label元素不能自身嵌套
+* label元素能包含最多一个input、button、select、textarea元素
+* label元素的for属性如果存在的话，只能指向表单控制元素
+* 
 
 ##标签省略
 * 当head元素是以某一个元素开头的时候，开标签<head>可以省略。
