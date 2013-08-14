@@ -2,7 +2,7 @@
 > 翻译时间：2013年8月13日  
 > 原文来源：http://www.w3.org/TR/html-markup/head.html  
 > 原文作者：W3C  
-> 原文标题：head – document metadata container  
+> 原文标题：head - document metadata container  
 
 #head
 head元素是一个文档metadata的集合，包括内联和外联的脚本和样式表。
@@ -21,7 +21,7 @@ _除非文档是以iframe形式被嵌入的，或者title以其它的形式提�
 
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
-_global attributes即任何通用的属性、事件和方法。_
+任何通用的属性、事件和方法。
  
 ##额外的约束和警告
 head元素包含一个profile属性，该属性是一个由空格分隔的 URL 列表，这些 URL 包含着有关页面的元数据信息。  
@@ -41,7 +41,7 @@ _head元素常常作为html元素的第一个子元素。_
 interface HTMLHeadElement : HTMLElement {};
 ```
 
-##默认的display属性
+##典型的默认显示属性
 ```
 head {
     display:none;

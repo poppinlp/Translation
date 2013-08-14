@@ -2,46 +2,51 @@
 > 翻译时间：2013年8月13日  
 > 原文来源：http://www.w3.org/TR/html-markup/label.html  
 > 原文作者：W3C  
-> 原文标题：head – caption for a form control  
+> 原文标题：label - caption for a form control  
 
 #label
-label元素通常是一个表单的控制单元的标题。
+label元素表现为一个表单的控制单元的标题。
 
 ##支持的内容
 包含[普通文字信息](http://www.w3.org/TR/html-markup/syntax.html#normal-character-data)的[修饰性元素](http://www.w3.org/TR/html-markup/common-models.html#common.elem.phrasing)
 
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
-_global attributes即任何通用的属性、事件和方法。_
+任何通用的属性、事件和方法。
 * for
-_该属性的值为将这个label作为标题的表单元素的id_
-* form [new]
-_该属性的值为想要被关联到的表单的id_
+该属性的值为希望被这个label绑定的元素的id。
+* form [HTML5]
+该属性的值为想要被关联到的表单的id。
+* accesskey [HTML4 HTML5]
+该属性用来设置这个label对应的键盘快捷键。如当accesskey值为1时，键盘按下alt+1即可为label绑定的元素设置焦点。  
+__注意：当鼠标点击label时，在触发label的onclick事件后会触发label绑定元素的onclick事件；但通过accesskey设置的快捷键则只会设置焦点，不会触发onclick事件。__
  
 ##额外的约束和警告
-* label元素不能自身嵌套
-* label元素能包含最多一个input、button、select、textarea元素
-* label元素的for属性如果存在的话，只能指向表单控制元素
-* 
+* label元素不能自身嵌套。
+* label元素能包含最多一个input、button、select或textarea元素。
+* label元素的for属性如果存在的话，只能指向表单的控制单元。
+* The interactive element label must not appear as a descendant of the a element.
+* The interactive element label must not appear as a descendant of the button element.
 
 ##标签省略
-* 当head元素是以某一个元素开头的时候，开标签<head>可以省略。
-* 当head元素之后紧跟着的不是空格或者注释的时候，闭标签</head>可以省略。  
-_大多数浏览器在head标签有省略的时候，都能自动的对其进行补全，但也有部分老的浏览器不会这么做。 [相关文章](http://www.stevesouders.com/blog/2010/05/12/autohead-my-first-browserscope-user-test/)_
+label元素必须同时包含开标签和闭标签，不能省略。
 
 ##允许的父元素
-html元素  
-_head元素常常作为html元素的第一个子元素。_
+任何能包含[修饰性元素](http://www.w3.org/TR/html-markup/common-models.html#common.elem.phrasing)的元素
 
 ##DOM接口
 ```
-interface HTMLHeadElement : HTMLElement {};
+interface HTMLLabelElement : HTMLElement {
+    readonly    attribute HTMLFormElement? form;
+                attribute DOMString htmlFor;
+    readonly    attribute HTMLElement? control;
+};
 ```
 
-##默认的display属性
+##典型的默认显示属性
 ```
-head {
-    display:none;
+label {
+    cursor:default;
 }
 ```
 
@@ -49,10 +54,15 @@ head {
 所有浏览器都支持。
 
 ##例子
+* label元素的隐式使用
+
 ```
-<html>
-    <head>
-        <title>example</title>
-    </head>
-</html>
+<label>Click me<input type="text" id="Name" name="Name" /></label>
 ```
+* label元素的显式使用
+
+```
+<label for="Name">Click me</label>
+<input type="text" id="Name" name="Name" />
+```
+
