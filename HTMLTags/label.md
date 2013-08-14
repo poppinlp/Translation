@@ -19,7 +19,7 @@ label元素表现为一个表单的控制单元的标题。
 该属性的值为想要被关联到的表单的id。
 * accesskey [HTML4 HTML5]
 该属性用来设置这个label对应的键盘快捷键。如当accesskey值为1时，键盘按下alt+1即可为label绑定的元素设置焦点。  
-__注意：当鼠标点击label时，在触发label的onclick事件后会触发label绑定元素的onclick事件；但通过accesskey设置的快捷键则只会设置焦点，不会触发onclick事件。__
+_注意：当鼠标点击label时，在触发label的onclick事件后会触发label绑定元素的onclick事件；但通过accesskey设置的快捷键则只会设置焦点，不会触发onclick事件。_
  
 ##额外的约束和警告
 * label元素不能自身嵌套。
@@ -65,4 +65,3 @@ label {
 <label for="Name">Click me</label>
 <input type="text" id="Name" name="Name" />
 ```
-
