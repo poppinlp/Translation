@@ -25,8 +25,8 @@ __注意：当鼠标点击label时，在触发label的onclick事件后会触发l
 * label元素不能自身嵌套。
 * label元素能包含最多一个input、button、select或textarea元素。
 * label元素的for属性如果存在的话，只能指向表单的控制单元。
-* The interactive element label must not appear as a descendant of the a element.
-* The interactive element label must not appear as a descendant of the button element.
+* label元素不能作为a元素的子元素。
+* label元素不能作为button元素的子元素。
 
 ##标签省略
 label元素必须同时包含开标签和闭标签，不能省略。
