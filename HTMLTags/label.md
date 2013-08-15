@@ -8,7 +8,7 @@
 label元素表现为一个表单的控制单元的标题。
 
 ##支持的内容
-包含[普通文字信息](http://www.w3.org/TR/html-markup/syntax.html#normal-character-data)的[修饰性元素](http://www.w3.org/TR/html-markup/common-models.html#common.elem.phrasing)
+包含[普通字符](http://www.w3.org/TR/html-markup/syntax.html#normal-character-data)的[修饰性元素](http://www.w3.org/TR/html-markup/common-models.html#common.elem.phrasing)
 
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
