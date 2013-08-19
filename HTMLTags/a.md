@@ -13,27 +13,32 @@ a元素表现为一个超链接。
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
 任何通用的属性、事件和方法。
+
 * href
-`href`属性申明这个超链接指向的目的地。如果没有申明href属性，那么这个元素将表现为[placeholder hyperlink](http://www.w3.org/TR/html-markup/a.html#placeholder-hyperlink)。`href`属性可以指向一个URL，也可以指向一个URL片段。URL片段是一个以#符号开始的名字，它在当前文档中申明了一个内部的目标地址（一个`ID`）。URL不是只能指向基于HTTP协议的文档，URL也可以用在任何浏览器支持的协议上。如：`file`、`ftp`和`mailto`等。
+`href`属性申明这个超链接指向的目的地。如果没有申明href属性，那么这个元素将表现为[placeholder hyperlink](http://www.w3.org/TR/html-markup/a.html#placeholder-hyperlink)。`href`属性可以指向一个URL，也可以指向一个URL片段。URL片段是一个以#符号开始的名字，它在当前文档中申明了一个内部的目标地址（一个`ID`）。URL不是只能指向基于HTTP协议的文档，URL也可以用在任何浏览器支持的协议上。如：`file`、`ftp`和`mailto`等。  
 __注意：你可以使用`top`这个特殊的片段名来创建一个回到页面顶部的链接，例如`<a href="#top">Return to top</a>`。这是HTML5中申明的用法。__
+
 * target
 这个属性申明显示链接资源的地方。在HTML4中，它是个frame的名字或者关键字；在HTML5中，它是个浏览器上下文的名字或者关键字（例如tab、window或者内联frame）。下面是有特殊含义的关键字列表：（每个表现情况均分为HTML4和HTML5两种）
-    * _self
+    * _self  
     在相同的frame或者浏览器上下文中读取响应。这是`target`属性的默认值。
-    * _blank
+    * _blank  
     在新的窗口或者浏览器上下文中读取响应。
-    * _parent
+    * _parent  
     在当前frame的父级frame或者当前浏览器上下文的父级浏览器上下文中读取响应。如果没有父级环境，这个选项和`_self`的表现相同。
-    * _top
+    * _top  
     在取消掉其他所有frame的原始窗口或者最顶级的浏览器上下文中读取响应。如果没有父级环境，这个选项和`_self`的表现相同。
 
 __注意：当`href`属性申明时再使用本属性__
+
 * rel
 该属性申明了这个文档和超链接目的文档之间的关系。属性值为空格分隔的关系列表。The values and their semantics will be registered by some authority that might have meaning to the document author. 当不指定任何关系时，默认值为`void`。  
+
 __注意：当`href`属性申明时再使用本属性__
 
 * hreflang
 该属性指定超链接目标使用的语言。HTML4支持的合法的语言标签列表请见[RFC 1766]()，HTML5支持的合法的语言标签列表请见[BCP 47](http://www.w3.org/TR/html-markup/references.html#refsBCP47)。  
+
 __注意：当`href`属性申明时再使用本属性__
 
 * media [HTML5]
@@ -50,6 +55,7 @@ Browsers not supporting the CSS3 Media Queries won't necessarilly recognize the 
 
 * type
 超链接目标的[MIME](http://www.w3.org/TR/html-markup/datatypes.html#common.data.mimetype)类型。合法的MIME类型列表请见[RFC 2046](http://www.w3.org/TR/html-markup/references.html#refsRFC2046)。  
+
 __注意：当`href`属性申明时再使用本属性__
 
 * download [HTML5]
