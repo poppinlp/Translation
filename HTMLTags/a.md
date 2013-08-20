@@ -32,24 +32,19 @@ __注意：你可以使用`top`这个特殊的片段名来创建一个回到页�
 __注意：当`href`属性申明时再使用本属性__
 
 * rel
-该属性申明了这个文档和超链接目的文档之间的关系。属性值为空格分隔的关系列表。The values and their semantics will be registered by some authority that might have meaning to the document author. 当不指定任何关系时，默认值为`void`。  
+该属性申明了这个文档和超链接目的文档之间的关系。属性值为空格分隔的关系列表。那些对于作者可能有一定意义的属性值和他们的语意将会被某些权威识别。当不指定任何关系时，默认值为`void`。  
 
 __注意：当`href`属性申明时再使用本属性__
 
 * hreflang
-该属性指定超链接目标使用的语言。HTML4支持的合法的语言标签列表请见[RFC 1766]()，HTML5支持的合法的语言标签列表请见[BCP 47](http://www.w3.org/TR/html-markup/references.html#refsBCP47)。  
+该属性指定超链接目标使用的语言。HTML4支持的合法的语言标签列表请见[RFC 1766](http://www.ietf.org/rfc/rfc1766.txt)，HTML5支持的合法的语言标签列表请见[BCP 47](http://www.w3.org/TR/html-markup/references.html#refsBCP47)。  
 
 __注意：当`href`属性申明时再使用本属性__
 
 * media [HTML5]
+该属性定义了超链接目标的多媒体类型。它的值必须是一个`media query`。这个属性主要是针对那些允许用户UA自适应用户设备的页面。一个有效的`media query`列表定义在[Media Queries](http://www.w3.org/TR/html-markup/references.html#refsMediaQueries)。
 
-The media for which the destination of the hyperlink was designed.
-A valid media query list as defined in [Media Queries].
-
-
-This attribute specifies the media which the linked resource applies to. Its value must be a media query. This attribute is mainly useful when linking to external stylesheets by allowing the user agent to pick the best adapted one for the device it runs on.
 Usage note:
-
 In HTML 4, only simple white-space-separated list of media description literals, i.e. media types and groups, where defined and allowed as values for this attribute, like print, screen, aural, braille, ... HTML 5 extended this to any kind of media queries, which are a superset of the allowed values of HTML 4.
 Browsers not supporting the CSS3 Media Queries won't necessarilly recognize the adequate link; do not forget to set fallback links, the restricted set of media queries defined in HTML 4.
 
@@ -91,11 +86,11 @@ Note: It is advisable to use the usemap attribute for the <img> element and the 
 * `a`元素不能是`button`元素的后代。
 * `coords`属性已经在HTML5中废除，对于图片地图，请使用`area`元素代替`a`元素。
 * `shape`属性已经在HTML5中废除，对于图片地图，请使用`area`元素代替`a`元素。
-* `urn`属性已经在HTML5中废除，Specify the preferred persistent identifier using the href attribute instead.
+* `urn`属性已经在HTML5中废除，指定首选的持久标识符请使用`href`属性代替。
 * `charset`属性已经在HTML5中废除，请使用HTTP`Content-Type`头来代替。
-* `methods`属性已经在HTML5中废除，请使用HTTP `OPTIONS`特性来代替。
-* `rev`属性已经在HTML5中废除，Use the rel attribute instead, with a term having the opposite meaning.
-* `name`属性已经在HTML5中废除，Consider putting an id attribute on the nearest container instead.
+* `methods`属性已经在HTML5中废除，请使用HTTP`OPTIONS`特性来代替。
+* `rev`属性已经在HTML5中废除，请使用带有相反意思的`rel`属性代替。
+* `name`属性已经在HTML5中废除，考虑通过在最近的父元素上设置`id`属性来代替。
 
 ##标签省略
 a元素必须同时包含开标签和闭标签，不能省略。
