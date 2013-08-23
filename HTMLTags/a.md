@@ -15,7 +15,7 @@ a元素表现为一个超链接。
 任何通用的属性、事件和方法。
 
 * href
-`href`属性申明这个超链接指向的目的地。如果没有申明href属性，那么这个元素将表现为[placeholder hyperlink](http://www.w3.org/TR/html-markup/a.html#placeholder-hyperlink)。`href`属性可以指向一个URL，也可以指向一个URL片段。URL片段是一个以#符号开始的名字，它在当前文档中申明了一个内部的目标地址（一个`ID`）。URL不是只能指向基于HTTP协议的文档，URL也可以用在任何浏览器支持的协议上。如：`file`、`ftp`和`mailto`等。  
+`href`属性申明这个超链接指向的目的地。如果没有申明href属性，那么这个元素将表现为[placeholder hyperlink](http://www.w3.org/TR/html-markup/a.html#placeholder-hyperlink)。`href`属性可以指向一个URL，也可以指向一个锚。锚是一个以`#`符号开始的名字，它在当前文档中申明了一个内部的目标地址（一个`ID`）。URL不是只能指向基于HTTP协议的文档，URL也可以用在任何浏览器支持的协议上。如：`file`、`ftp`和`mailto`等。  
 __注意：你可以使用`top`这个特殊的片段名来创建一个回到页面顶部的链接，例如`<a href="#top">Return to top</a>`。这是HTML5中申明的用法。__
 
 * target
@@ -33,49 +33,36 @@ __注意：当`href`属性申明时再使用本属性__
 
 * rel
 该属性申明了这个文档和超链接目的文档之间的关系。属性值为空格分隔的关系列表。那些对于作者可能有一定意义的属性值和他们的语意将会被某些权威识别。当不指定任何关系时，默认值为`void`。  
-
 __注意：当`href`属性申明时再使用本属性__
 
 * hreflang
 该属性指定超链接目标使用的语言。HTML4支持的合法的语言标签列表请见[RFC 1766](http://www.ietf.org/rfc/rfc1766.txt)，HTML5支持的合法的语言标签列表请见[BCP 47](http://www.w3.org/TR/html-markup/references.html#refsBCP47)。  
-
 __注意：当`href`属性申明时再使用本属性__
 
 * media [HTML5]
 该属性定义了超链接目标的多媒体类型。它的值必须是一个`media query`。这个属性主要是针对那些允许用户UA自适应用户设备的页面。一个有效的`media query`列表定义在[Media Queries](http://www.w3.org/TR/html-markup/references.html#refsMediaQueries)。
 
-Usage note:
-In HTML 4, only simple white-space-separated list of media description literals, i.e. media types and groups, where defined and allowed as values for this attribute, like print, screen, aural, braille, ... HTML 5 extended this to any kind of media queries, which are a superset of the allowed values of HTML 4.
-Browsers not supporting the CSS3 Media Queries won't necessarilly recognize the adequate link; do not forget to set fallback links, the restricted set of media queries defined in HTML 4.
-
 * type
 超链接目标的[MIME](http://www.w3.org/TR/html-markup/datatypes.html#common.data.mimetype)类型。合法的MIME类型列表请见[RFC 2046](http://www.w3.org/TR/html-markup/references.html#refsRFC2046)。  
-
 __注意：当`href`属性申明时再使用本属性__
 
 * download [HTML5]
-This attribute, if present, indicates that the author intends the hyperlink to be used for downloading a resource so that when the user clicks on the link they will be prompted to save it as a local file. If the attribute has a value, the value will be used as the pre-filled file name in the Save prompt that opens when the user clicks on the link (the user can change the name before actually saving the file of course). There are no restrictions on allowed values, but you should consider that most file systems have limitations with regard to what punctuation is supported in file names, and browsers are likely to adjust file names accordingly.
+就像他的名字一样，这个属性就是用来指定用下载的方式链接到资源，把资源保存到本地文件。如果该属性有值，这个值会被用作下载时的默认文件名。对于属性值没有严格的限制，但使用的时候应该考虑大多数操作系统对于文件名的限制。
 
-Note:
-Can be used with blob: URLs and data: URLs, to make it easy for users to download content that is generated programmatically using JavaScript (e.g. a picture created using an online drawing Web app).
-If the HTTP header Content-Disposition: is present and gives a different filename than this attribute, the HTTP header has priority over this attribute.
-If this attribute is present and Content-Disposition: is set to inline, Firefox gives priority to Content-Disposition, like for the filename case, while Chrome gives priority to the download attribute.
-In Firefox 20 this attribute is only honored for links to resources with the same-origin.
+注意：
+    * 可以被用来指定blob和data，让用户更容易的下载javascript程序生成的内容（比如在线画图工具生成的图片）。
+    * 当HTTP返回头中包含`Content-Disposition`并且提供了另一个文件名，那么讲采用返回头中的文件名而不是这个属性的文件名。
+    * 当HTTP返回头中包含`Content-Disposition`并且其值为inline，Firefox给`Content-Disposition`更高的优先级，Chrome给`download`属性更高的优先级。
+    * 在Firefox 20中，这个属性仅仅对同源的资源有效。
 
 * ping [HTML5]
+由空格分隔的URL列表，当用户点击该链接时，这些URL会获得通知。  
+__注意：当`href`属性申明时再使用本属性__
 * charset [HTML5中废弃]
-This attribute defines the character encoding of the linked resource. The value is a space- and/or comma-delimited list of character sets as defined in RFC 2045. The default value is ISO-8859-1.
-Usage note: This attribute is obsolete in HTML5 and should not be used by authors. To achieve its effect, use the HTTP Content-Type header on the linked resource.
 * coords [HTML5中废弃]
-For use with object shapes, this attribute uses a comma-separated list of numbers to define the coordinates of the object on the page.
 * name [HTML5中废弃]
-This attribute is required in an anchor defining a target location within a page. A value for name is similar to a value for the id core attribute and should be an alphanumeric identifier unique to the document. Under the HTML 4.01 specification, id and name both can be used with the <a> element as long as they have identical values.
-Usage note: This attribute is obsolete in HTML5, use global attribute id instead.
 * rev [HTML5中废弃]
-This attribute specifies a reverse link, the inverse relationship of the rel attribute. It is useful for indicating where an object came from, such as the author of a document.
 * shape [HTML5中废弃]
-This attribute is used to define a selectable region for hypertext source links associated with a figure to create an image map. The values for the attribute are circle, default, polygon, and rect. The format of the coords attribute depends on the value of shape. For circle, the value is x,y,r where x and y are the pixel coordinates for the center of the circle and r is the radius value in pixels. For rect, the coords attribute should be x,y,w,h. The x,y values define the upper-left-hand corner of the rectangle, while w and h define the width and height respectively. A value of polygon for shape requires x1,y1,x2,y2,... values for coords. Each of the x,y pairs defines a point in the polygon, with successive points being joined by straight lines and the last point joined to the first. The value default for shape requires that the entire enclosed area, typically an image, be used.
-Note: It is advisable to use the usemap attribute for the <img> element and the associated <map> element to define hotspots instead of the shape attribute.
 * datafld [非标准]
 * datasrc [非标准]
 * methods [非标准]
@@ -156,4 +143,4 @@ a:link:active, a:visited:active {
 ```
 
 ##关于javascript:void(0)
-It is often the case that an anchor tag is used with the onclick event. In order to prevent the page from refreshing, href is often set to either "#" or "javascript:void(0)". Both of these values can lead to some unexpected errors when copying links and opening links in a new tab and/or window. Be aware of this for usability reasons, and when users do use anchor tags and you prevent default behavior.
+大多数时候`a`元素的使用都伴随着鼠标点击事件的触发。为了阻止页面的刷新，`href`属性经常被设置为`#`或者`javascript:void(0)`。`#`即一个页面上端的锚，而`void`是javascript中的一个操作符，作用就是计算一个表达式，但不返回值，如`void(document.form.submit())`就会提交表单，而`void(0)`则没有任何效果。
