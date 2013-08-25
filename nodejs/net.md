@@ -114,13 +114,10 @@ _这段先略过。_
 关于`allowHalfOpen`参数，请看`createServer()`和[end事件](#end-event)。
 
 ###socket.connect(port, [host], [connectListener]) 和 socket.connect(path, [connectListener])
-Opens the connection for a given socket. If port and host are given, then the socket will be opened as a TCP socket, if host is omitted, localhost will be assumed. If a path is given, the socket will be opened as a unix socket to that path.
-
-Normally this method is not needed, as net.createConnection opens the socket. Use this only if you are implementing a custom Socket.
-
-This function is asynchronous. When the 'connect' event is emitted the socket is established. If there is a problem connecting, the 'connect' event will not be emitted, the 'error' event will be emitted with the exception.
-
-The connectListener parameter will be added as an listener for the 'connect' event.
+对于socket按照给定的方式建立连接。如果提供了`port`和`host`，那么socket将会作为TCP socket。`host`的默认值为`localhost`。如果提供了`path`，那么socket将会作为unix socket。  
+通常情况下，这个方法不是必要的，`net.createConnection`将会建立连接。建议当你在实现自定义的socket时才使用。  
+这个函数是异步的。socket建立完成后会触发`connect`事件。如果在建立连接中出现了问题，`connect`事件不会被触发，取而代之的是带着异常信息的`error`事件。  
+`connectListener`参数将会被作为`connect`事件的监听器。
 
 socket.bufferSize#
 net.Socket has the property that socket.write() always works. This is to help users get up and running quickly. The computer cannot always keep up with the amount of data that is written to a socket - the network connection simply might be too slow. Node will internally queue up the data written to a socket and send it out over the wire when it is possible. (Internally it is polling on the socket's file descriptor for being writable).
@@ -130,10 +127,10 @@ The consequence of this internal buffering is that memory may grow. This propert
 Users who experience large or growing bufferSize should attempt to "throttle" the data flows in their program with pause() and resume().
 
 ###socket.setEncoding([encoding])
-该方法设置当socket作为输入流时的编码。更多详情，请查看`stream.setEncoding()`。
+该方法设置当socket为可读流时的编码。更多详情，请查看`stream.setEncoding()`。
 
 ###socket.write(data, [encoding], [callback])
-Sends data on the socket. The second parameter specifies the encoding in the case of a string--it defaults to UTF8 encoding.
+该方法通过socket发送数据。第二个参数指定了字符串的编码。默认是utf8。  
 
 Returns true if the entire data was flushed successfully to the kernel buffer. Returns false if all or part of the data was queued in user memory. 'drain' will be emitted when the buffer is again free.
 
@@ -154,13 +151,10 @@ Ensures that no more I/O activity happens on this socket. Only necessary in case
 该方法恢复由于执行`pause()`导致的暂停。
 
 ###socket.setTimeout(timeout, [callback])
-Sets the socket to timeout after timeout milliseconds of inactivity on the socket. By default net.Socket do not have a timeout.
-
-When an idle timeout is triggered the socket will receive a 'timeout' event but the connection will not be severed. The user must manually end() or destroy() the socket.
-
-If timeout is 0, then the existing idle timeout is disabled.
-
-The optional callback parameter will be added as a one time listener for the 'timeout' event.
+设置socket在空闲多久后被认为超时。默认`net.Socket`没有超时时间。  
+当超时触发时，socket将会收到一个`timeout`事件，但是连接没有被销毁。用户需要手动`end()`或者`destroy()`这个socket。  
+如果`timeout`被设置为0时，即表示不会超时。
+可选的`callback`参数被用来作为`timeout`事件的单次监听器。
 
 ###socket.setNoDelay([noDelay])
 Disables the Nagle algorithm. By default TCP connections use the Nagle algorithm, they buffer data before sending it off. Setting true for noDelay will immediately fire off data each time socket.write() is called. noDelay defaults to true.
@@ -202,20 +196,19 @@ Set initialDelay (in milliseconds) to set the delay between the last data packet
 
 ###Event: 'data'
 `Buffer object`
-该事件在获取到数据时触发。`data`参数是一个`Buffer`或者`String`。数据的编码通过`socket.setEncoding()`方法来设置。（更多详情，请查看[Readable Stream]()章节。）
-
-Note that the data will be lost if there is no listener when a Socket emits a 'data' event.
+该事件在获取到数据时触发。`data`参数是一个`Buffer`或者`String`。数据的编码通过`socket.setEncoding()`方法来设置。（更多详情，请查看[Readable Stream]()章节。）  
+__注意：当`data`事件没有监听器时，获取到的数据将会被抛弃。__
 
 ###Event: 'end'
-当另一端的socket发送FIN包时发生。  
-By default (allowHalfOpen == false) the socket will destroy its file descriptor once it has written out its pending write queue. However, by setting allowHalfOpen == true the socket will not automatically end() its side allowing the user to write arbitrary amounts of data, with the caveat that the user is required to end() their side now.
+该事件当另一端的socket发送FIN包时发生。  
+默认状态下（`allowHalfOpen == false`），socket将会在发送完等待队列中的数据后销毁它的文件描述符。然而，在设置allowHalfOpen为true以后，socket将不会自动断开自己这边的连接，这允许用户继续发送任意数据，但作为代价，用户需要自己关闭这边的连接。
 
 ###Event: 'timeout'
-Emitted if the socket times out from inactivity. This is only to notify that the socket has been idle. The user must manually close the connection.
+该事件当socket闲置超时时发生。它仅仅表示这个socket被闲置了，用户需要手动`end()`这个连接。
 参考资料：`socket.setTimeout()`
 
 ###Event: 'drain'
-该事件当写缓存为空时发生。能被用来做throttle uploads(断点续传？)。  
+该事件当写缓存为空时发生。能被用来throttle uploads(TODO)。  
 参考资料：`socket.wirte()`方法的返回值
 
 ###Event: 'error'

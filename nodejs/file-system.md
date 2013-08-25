@@ -98,3 +98,9 @@ chmod方法的异步版本。回调函数的参数只有一个，即可能存在
 
 ##fs.chmodSync(path, mode)
 chmod方法的同步版本。
+
+##fs.fchmod(fd, mode, callback)
+fchmod方法的异步版本。回调函数的参数只有一个，即可能存在的异常。
+
+##fs.fchmodSync(fd, mode)
+fchmod方法的同步版本。

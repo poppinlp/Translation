@@ -1,5 +1,5 @@
 #Lranslation
-一些自己翻译的东西，主要是为了自我学习。水平有限，欢迎修改。
+一些自己翻译的东西，主要是为了方便学习。水平有限，欢迎修正。
 
 * mustache  
     * [mustache-guide](https://github.com/poppinlp/Lranslation/blob/master/mustache/mustache-guide.md)
