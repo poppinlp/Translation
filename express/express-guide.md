@@ -199,7 +199,7 @@ function errorHandler(err, req, res, next) {
 
 ##在线用户统计
 
-这一部分将介绍一个完整的使用Redis(http://redis.io/)来统计用户在线数量的应用。首先，你需要创建一个包含两个依赖关系的package.json文件(例如下面这个)，其中一个依赖关系是redis，另一个就是express。并且你也需要安装redis，然后通过$ redis-server 来运行它。  
+这一部分将介绍一个完整的使用[Redis](http://redis.io/)来统计用户在线数量的应用。首先，你需要创建一个包含两个依赖关系的package.json文件(例如下面这个)，其中一个依赖关系是redis，另一个就是express。并且你也需要安装redis，然后通过$ redis-server 来运行它。  
 ```
 {
     "name": "app",
