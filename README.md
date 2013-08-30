@@ -17,3 +17,4 @@
    * [a](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/a.md)
 * PhantomJS
    * [quick-start](https://github.com/poppinlp/Lranslation/blob/master/phantomJS/quick-start.md)
+   * [page-automation](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/page-automation.md)
