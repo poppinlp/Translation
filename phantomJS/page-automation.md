@@ -1,7 +1,7 @@
 > 贡献者：梁鹏  
 > 翻译时间：2013年8月30日  
 > 原文来源：https://github.com/ariya/phantomjs/wiki/Page-Automation    
-> 原文作者：PhantomJS
+> 原文作者：PhantomJS  
 > 原文标题：Page Automation  
 
 #网页自动化
