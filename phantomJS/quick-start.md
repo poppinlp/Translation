@@ -8,7 +8,7 @@
 
 本文假设已经安装了PhantomJS，并且PhantomJS的可执行文件在`PATH`路径中。
 
-本文中的代码在[PhantomJS的示例](https://github.com/ariya/phantomjs/wiki/Examples)中都能找到。同时也推荐你去阅读PhantomJS在以下方面的使用：[页面自动化](https://github.com/ariya/phantomjs/wiki/Page-Automation)、[网络监控](https://github.com/ariya/phantomjs/wiki/Network-Monitoring)、[图片截取](https://github.com/ariya/phantomjs/wiki/Screen-Capture)和[headless testing](https://github.com/ariya/phantomjs/wiki/Headless-Testing)。
+本文中的代码在[PhantomJS的示例](https://github.com/ariya/phantomjs/wiki/Examples)中都能找到。同时也推荐你去阅读PhantomJS在以下方面的使用：[页面自动化](https://github.com/ariya/phantomjs/wiki/Page-Automation)、[网络监控](https://github.com/ariya/phantomjs/wiki/Network-Monitoring)、[屏幕抓取](https://github.com/ariya/phantomjs/wiki/Screen-Capture)和[headless testing](https://github.com/ariya/phantomjs/wiki/Headless-Testing)。
 
 ##Hello World
 
