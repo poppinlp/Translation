@@ -33,6 +33,7 @@ phantomjs rasterize.js http://ariya.github.com/svg/tiger.svg tiger.png
 ```
 
 它将会生成下面的图片：
+
 ![老虎](https://github-camo.global.ssl.fastly.net/388d125df20fdb6cde57a23587b296151b4ac4d7/687474703a2f2f6c68362e67677068742e636f6d2f5f4f696a6866315a50762d342f545236694d384a304b72492f41414141414141414279342f52435a3845673536374c4d2f733430302f74696765722e706e67)
 
 另一个例子是生成一个[极地时钟](http://raphaeljs.com/polar-clock.html)：
