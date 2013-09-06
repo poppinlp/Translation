@@ -19,3 +19,5 @@
    * [quick-start](https://github.com/poppinlp/Lranslation/blob/master/phantomJS/quick-start.md)
    * [page-automation](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/page-automation.md)
    * [inter-process-communication](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/inter-process-communication.md)
+   * [screen-capture](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/screen-capture.md)
+   * [network-monitor](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/network-monitor.md)
