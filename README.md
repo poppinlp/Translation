@@ -14,6 +14,7 @@ __认真学习和做东西，这些内容先停止更新__
    * [synopsis](https://github.com/poppinlp/Lranslation/blob/master/nodejs/synopsis.md)
    * [file-system](https://github.com/poppinlp/Lranslation/blob/master/nodejs/file-system.md)
    * [net](https://github.com/poppinlp/Lranslation/blob/master/nodejs/net.md)
+   * [util](https://github.com/poppinlp/Lranslation/blob/master/nodejs/util.md)
 * HTMLTags
    * [head](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/head.md)
    * [label](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/label.md)
