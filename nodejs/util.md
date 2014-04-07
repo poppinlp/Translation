@@ -50,7 +50,7 @@ require('util').debug('message on stderr');
 ##util.puts([...])
 一个同步的输出方法，将会阻塞进程并且输出所有参数到`stdout`，每个参数的结尾都会换行。
 
-##util.print(['''])
+##util.print([...])
 一个同步的输出方法，将会阻塞进程，将每个参数转换为字符串并输出到`stdout`，参数的结尾不会换行。
 
 ##util.log(string)

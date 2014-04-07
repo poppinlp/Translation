@@ -1,7 +1,5 @@
 #Lranslation
 
-__认真学习和做东西，这些内容先停止更新__
-
 一些自己翻译的东西，主要是为了方便学习。水平有限，欢迎修正。
 
 * mustache  
@@ -15,6 +13,7 @@ __认真学习和做东西，这些内容先停止更新__
    * [file-system](https://github.com/poppinlp/Lranslation/blob/master/nodejs/file-system.md)
    * [net](https://github.com/poppinlp/Lranslation/blob/master/nodejs/net.md)
    * [util](https://github.com/poppinlp/Lranslation/blob/master/nodejs/util.md)
+   * [globals](https://github.com/poppinlp/Lranslation/blob/master/nodejs/globals.md)
 * HTMLTags
    * [head](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/head.md)
    * [label](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/label.md)
