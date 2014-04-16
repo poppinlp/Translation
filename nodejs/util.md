@@ -80,7 +80,7 @@ console.log(util.inspect(util, { showHidden: true, depth: null }));
 ##Customizing util.inspect colors
 通过`util.inspect`输出内容的颜色（如果激活了）是通过全局对象`util.inspect.styles`和`util.inspect.colors`定义的。
 
-`util.inspect.styles` is a map assigning each style a color from `util.inspect.colors`. Highlighted styles and their default values are: `number` (yellow) `boolean` (yellow) `string` (green) `date` (magenta) `regexp` (red) `null` (bold) `undefined` (grey) `special` - only function at this time (cyan) * name (intentionally no styling)
+`util.inspect.styles`中每个样式的颜色是与`util.inspect.colors`匹配对应的。高亮和它们默认的颜色匹配为：`number` (yellow) `boolean` (yellow) `string` (green) `date` (magenta) `regexp` (red) `null` (bold) `undefined` (grey) `special` - only function at this time (cyan) * name (intentionally no styling)
 
 Predefined color codes are: `white`, `grey`, `black`, `blue`, `cyan`, `green`, `magenta`, `red` and `yellow`. There are also `bold`, `italic`, `underline` and `inverse` codes.
 

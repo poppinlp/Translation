@@ -1,5 +1,5 @@
 > 贡献者：梁鹏  
-> 翻译时间：2014年4月7日  
+> 翻译时间：2014年4月13日  
 > 原文来源：http://www.nodejs.org/api/globals.html  
 > 原文作者：NodeJS  
 > 原文标题：Global Objects  
@@ -33,40 +33,40 @@
 用来引用模块。详情可以看[Modules](http://nodejs.org/api/modules.html#modules_modules)。`require`其实不是一个全局变量，而是存在于每个模块中。
 
 ##require.resolve()
-Use the internal `require()` machinery to look up the location of a module, but rather than loading the module, just return the resolved filename.
+使用内置的`require()`机制去定位模块的位置，但并不加载模块，只是返回解析后的文件名。
 
 ##require.cache
 {Object}
 
-Modules are cached in this object when they are required. By deleting a key value from this object, the next `require` will reload the module.
+当模块被加载后它们就缓存在这个对象中。在删除对象中的某个键值后，下一次`require`会重新加载这个对象。
 
 ##__filename
 {String}
 
-The filename of the code being executed. This is the resolved absolute path of this code file. For a main program this is not necessarily the same filename used in the command line. The value inside a module is the path to that module file.
+即当前执行代码的文件名。这是代码文件解析后的绝对路径。对于主程序而言这和命令行中的文件名不一定相同。对于一个模块而言这是模块文件的路径。
 
-Example: running `node example.js` from `/Users/mjr`
+例如：在`/Users/mjr/`中执行`node example.js`
 
 ```
 console.log(__filename);
 // /Users/mjr/example.js
 ```
 
-`__filename` isn't actually a global but rather local to each module.
+`__filename`其实不是全局变量，但在每个模块中都可以访问。
 
 ##__dirname
 {String}
 
-The name of the directory that the currently executing script resides in.
+当前执行的脚本所在的目录名。
 
-Example: running `node example.js` from `/Users/mjr`
+例如：在`Users/mjr`中执行`node example.js`
 
 ```
 console.log(__dirname);
 // /Users/mjr
 ```
 
-`__dirname` isn't actually a global but rather local to each module.
+`__dirname`其实不是全局变量，但在每个模块中都可以访问。
 
 ##module
 {Object}
@@ -87,16 +87,17 @@ See the [module system documentation](http://nodejs.org/api/modules.html) for mo
 See the [module section](http://nodejs.org/api/modules.html) for more information.
 
 ##setTimeout(cb, ms)
-Run callback `cb` after at least `ms` milliseconds. The actual delay depends on external factors like OS timer granularity and system load.
+启动一个计时器，在`ms`毫秒后执行回调函数`cb`。实际上延迟的时间取决于一些外部因素如系统计时器的粒度和系统负载。
 
-The timeout must be in the range of 1-2,147,483,647 inclusive. If the value is outside that range, it's changed to 1 millisecond. Broadly speaking, a timer cannot span more than 24.8 days.
+延迟的时间值必须在1-2147483647之间。如果延迟的时间超过这个范围，那么将会被设置成1毫秒。广义上讲，一个计时器的有效期不能超过24.8天。
 
-Returns an opaque value that represents the timer.
+返回一个代表着计时器的值。
 
 ##clearTimeout(t)
-Stop a timer that was previously created with `setTimeout()`. The callback will not execute.
+停止一个之前通过`setTimeout()`创建的计时器。那个计时器的回调函数不会被执行。
 
 ##setInterval(cb, ms)
+启动一个计时器，每隔`ms`毫秒就执行一次回调函数`cb`。注意实际上的延迟不一定准确，取决于一些外部因素如系统计时器的粒度和系统负载。但
 Run callback `cb` repeatedly every `ms` milliseconds. Note that the actual interval may vary, depending on external factors like OS timer granularity and system load. It's never less than ms but it may be longer.
 
 The interval must be in the range of 1-2,147,483,647 inclusive. If the value is outside that range, it's changed to 1 millisecond. Broadly speaking, a timer cannot span more than 24.8 days.
