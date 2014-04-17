@@ -71,40 +71,37 @@ console.log(__dirname);
 ##module
 {Object}
 
-A reference to the current module. In particular `module.exports` is used for defining what a module exports and makes available through require().
+是当前模块的引用。`module.exports`用来定义一个模块通过`require()`来引用的对外接口。
 
-module isn't actually a global but rather local to each module.
+`module`其实不是全局变量，但在每个模块中都可以访问。
 
-See the [module system documentation](http://nodejs.org/api/modules.html) for more information.
+可以查看[module system documentation](http://nodejs.org/api/modules.html)文档来获取更多信息。
 
 ##exports
-A reference to the `module.exports` that is shorter to type. See [module system documentation](http://nodejs.org/api/modules.html) for details on when to use exports and when to use `module.exports`.
+是`module.exports`的引用的简写形式。在使用`exports`或`module.exports`时可以查看[module system documentation](http://nodejs.org/api/modules.html)获取详情。
 
-`exports` isn't actually a global but rather local to each module.
+`exports`其实不是全局变量，但在每个模块中都可以访问。
 
-See the [module system documentation](http://nodejs.org/api/modules.html) for more information.
-
-See the [module section](http://nodejs.org/api/modules.html) for more information.
+可以查看[module system documentation](http://nodejs.org/api/modules.html)和[module section](http://nodejs.org/api/modules.html)文档来获取更多信息。
 
 ##setTimeout(cb, ms)
 启动一个计时器，在`ms`毫秒后执行回调函数`cb`。实际上延迟的时间取决于一些外部因素如系统计时器的粒度和系统负载。
 
 延迟的时间值必须在1-2147483647之间。如果延迟的时间超过这个范围，那么将会被设置成1毫秒。广义上讲，一个计时器的有效期不能超过24.8天。
 
-返回一个代表着计时器的值。
+返回一个代表着计时器的特殊值。
 
 ##clearTimeout(t)
 停止一个之前通过`setTimeout()`创建的计时器。那个计时器的回调函数不会被执行。
 
 ##setInterval(cb, ms)
-启动一个计时器，每隔`ms`毫秒就执行一次回调函数`cb`。注意实际上的延迟不一定准确，取决于一些外部因素如系统计时器的粒度和系统负载。但
-Run callback `cb` repeatedly every `ms` milliseconds. Note that the actual interval may vary, depending on external factors like OS timer granularity and system load. It's never less than ms but it may be longer.
+启动一个计时器，每隔`ms`毫秒就执行一次回调函数`cb`。注意实际上的延迟不一定准确，取决于一些外部因素如系统计时器的粒度和系统负载。但只会更长不会更短。
 
-The interval must be in the range of 1-2,147,483,647 inclusive. If the value is outside that range, it's changed to 1 millisecond. Broadly speaking, a timer cannot span more than 24.8 days.
+延迟的时间值必须在1-2147483647之间。如果延迟的时间超过这个范围，那么将会被设置成1毫秒。广义上讲，一个计时器的有效期不能超过24.8天。
 
-Returns an opaque value that represents the timer.
+返回一个代表着计时器的特殊值。
 
 ##clearInterval(t)
-Stop a timer that was previously created with `setInterval()`. The callback will not execute.
+停止一个之前通过`setInterval()`创建的计时器。那个计时器的回调函数不会被执行。
 
-The timer functions are global variables. See the [timers](http://nodejs.org/api/timers.html) section.
+计时器函数时全局表量。详情可以看[这篇文档](http://nodejs.org/api/timers.html).
