@@ -5,21 +5,19 @@
 > 原文标题：a - hyperlink  
 
 #a
-a元素表现为一个超链接。
+`a`元素表现为一个超链接。
 
 ##支持的内容
 任何[行内元素](http://www.w3.org/TR/html-markup/common-models.html#common.elem.phrasing)和[块级元素](http://www.w3.org/TR/html-markup/common-models.html#common.elem.flow)。  
 
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
-任何通用的属性、事件和方法。
-
+任何全局的属性。
 * href  
 `href`属性申明这个超链接指向的目的地。如果没有申明href属性，那么这个元素将表现为[placeholder hyperlink](http://www.w3.org/TR/html-markup/a.html#placeholder-hyperlink)。  
 `href`属性可以指向一个URL，也可以指向一个锚。锚是一个以`#`符号开始的名字，它在当前文档中申明了一个内部的目标地址（一个`ID`）。  
 URL不是只能指向基于HTTP协议的文档，URL也可以用在任何浏览器支持的协议上。如：`file`、`ftp`和`mailto`等。  
 __注意：你可以使用`top`这个特殊的片段名来创建一个回到页面顶部的链接，例如`<a href="#top">Return to top</a>`。这是HTML5中申明的用法。__
-
 * target  
 这个属性申明显示链接资源的地方。在HTML4中，它是个frame的名字或者关键字；在HTML5中，它是个浏览器上下文的名字或者关键字（例如tab、window或者内联frame）。下面是有特殊含义的关键字列表：（每个表现情况均分为HTML4和HTML5两种）
     * _self  
@@ -32,29 +30,23 @@ __注意：你可以使用`top`这个特殊的片段名来创建一个回到页�
     在取消掉其他所有frame的原始窗口或者最顶级的浏览器上下文中读取响应。如果没有父级环境，这个选项和`_self`的表现相同。
 
 __注意：当`href`属性申明时再使用本属性__
-
 * rel  
 该属性申明了这个文档和超链接目的文档之间的关系。属性值为空格分隔的关系列表。那些对于作者可能有一定意义的属性值和他们的语意将会被某些权威识别。当不指定任何关系时，默认值为`void`。  
 __注意：当`href`属性申明时再使用本属性__
-
 * hreflang  
 该属性指定超链接目标使用的语言。HTML4支持的合法的语言标签列表请见[RFC 1766](http://www.ietf.org/rfc/rfc1766.txt)，HTML5支持的合法的语言标签列表请见[BCP 47](http://www.w3.org/TR/html-markup/references.html#refsBCP47)。  
 __注意：当`href`属性申明时再使用本属性__
-
 * media [HTML5]  
 该属性定义了超链接目标的多媒体类型。它的值必须是一个`media query`。这个属性主要是针对那些允许用户UA自适应用户设备的页面。一个有效的`media query`列表定义在[Media Queries](http://www.w3.org/TR/html-markup/references.html#refsMediaQueries)。
-
 * type  
 超链接目标的[MIME](http://www.w3.org/TR/html-markup/datatypes.html#common.data.mimetype)类型。合法的MIME类型列表请见[RFC 2046](http://www.w3.org/TR/html-markup/references.html#refsRFC2046)。  
 __注意：当`href`属性申明时再使用本属性__
-
 * download [HTML5]  
 就像他的名字一样，这个属性就是用来指定用下载的方式链接到资源，把资源保存到本地文件。如果该属性有值，这个值会被用作下载时的默认文件名。对于属性值没有严格的限制，但使用的时候应该考虑大多数操作系统对于文件名的限制。  
     * 可以被用来指定blob和data，让用户更容易的下载javascript程序生成的内容（比如在线画图工具生成的图片）。
     * 当HTTP返回头中包含`Content-Disposition`并且提供了另一个文件名，那么讲采用返回头中的文件名而不是这个属性的文件名。
     * 当HTTP返回头中包含`Content-Disposition`并且其值为inline，Firefox给`Content-Disposition`更高的优先级，Chrome给`download`属性更高的优先级。
     * 在Firefox 20中，这个属性仅仅对同源的资源有效。
-
 * ping [HTML5]  
 由空格分隔的URL列表，当用户点击该链接时，这些URL会获得通知。  
 __注意：当`href`属性申明时再使用本属性__

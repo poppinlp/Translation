@@ -12,13 +12,13 @@
 
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
-任何通用的属性、事件和方法。
-* for
+任何全局的属性。
+* for  
 该属性的值为希望被这个`label`绑定的元素的id。
-* accesskey [HTML4 HTML5]
+* accesskey [HTML4 HTML5]  
 该属性用来设置这个`label`对应的键盘快捷键。如当`accesskey`值为1时，键盘按下alt+1即可为`label`绑定的元素设置焦点。请不要将快捷键设置为如下的通常被浏览器使用的值：a、c、e、f、g、h、v。  
 _注意：当鼠标点击`label`时，在触发`label`的`onclick`事件后会触发`label`绑定元素的`onclick`事件；但通过`accesskey`设置的快捷键则只会设置焦点，不会触发`onclick`事件。_
-* form [HTML5]
+* form [HTML5]  
 该属性的值为想要被关联到的表单的`id`。
  
 ##额外的约束和警告

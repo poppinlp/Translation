@@ -21,7 +21,7 @@
 
 ##支持的属性
 * [global attributes](http://www.w3.org/TR/html-markup/global-attributes.html)  
-任何通用的属性、事件和方法。
+任何全局的属性。
  
 ##额外的约束和警告
 `head`元素包含一个`profile`属性，该属性是一个由空格分隔的 URL 列表，这些 URL 包含着有关页面的元数据信息。  
