@@ -14,6 +14,7 @@
    * [net](https://github.com/poppinlp/Lranslation/blob/master/nodejs/net.md)
    * [util](https://github.com/poppinlp/Lranslation/blob/master/nodejs/util.md)
    * [globals](https://github.com/poppinlp/Lranslation/blob/master/nodejs/globals.md)
+   * [string-decoder](https://github.com/poppinlp/Lranslation/blob/master/nodejs/string-decoder.md)
 * HTMLTags
    * [head](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/head.md)
    * [label](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/label.md)
