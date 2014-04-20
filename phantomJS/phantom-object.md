@@ -1,6 +1,6 @@
 > 贡献者：梁鹏  
 > 翻译时间：2014年4月20日  
-> 原文来源：https://http://phantomjs.org/api/phantom/property/args.html  
+> 原文来源：https://http://phantomjs.org/api/phantom/  
 > 原文作者：PhantomJS  
 > 原文标题：phantom Object  
 
@@ -12,7 +12,7 @@
 ###args
 `phantom.args` {String[]}
 
-稳定性：__不推荐使用__ - 推荐使用[System模块](http://phantomjs.org/api/system/)的[`system.args`](http://phantomjs.org/api/system/property/args.html)
+稳定性：__不推荐使用__ - 推荐使用[System模块](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/system.md)的[`system.args`](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/system.md#args)
 
 该属性只读，是传递给脚本的参数数组。
 
@@ -21,7 +21,7 @@
 
 PhantomJS 1.7开始支持
 
-可以对任何域名获取或者设置Cookie（尽管如此，对于设置Cookie，还是推荐使用[`phantom.addCookie`](http://phantomjs.org/api/phantom/method/add-cookie.html)）。这些Cookies储存在CookieJar中，在打开相关的网页时会被使用。
+可以对任何域名获取或者设置Cookie（尽管如此，对于设置Cookie，还是推荐使用[`phantom.addCookie`](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/phantom-object.md#addcookie)）。这些Cookies储存在CookieJar中，在打开相关的网页时会被使用。
 
 如果PhantomJS[启动配置](http://phantomjs.org/api/command-line.html)中指定的cookie文件里存在Cookie数据，那么那些数据将会被提前放入这个数组中。
 
@@ -35,12 +35,12 @@ PhantomJS 1.7开始支持
 ###libraryPath
 `phantom.libraryPath` {String}
 
-这个属性储存着[`injectJs`](http://phantomjs.org/api/phantom/method/inject-js.html)方法使用的用来解析脚本名称的路径。它的初始值为PhantomJS执行的脚本所在的目录。
+这个属性储存着[`injectJs`](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/phantom-object.md#injectjs)方法使用的用来解析脚本名称的路径。它的初始值为PhantomJS执行的脚本所在的目录。
 
 ###scriptName
 `phantom.scriptName` {String}
 
-稳定性：__不建议使用__ - 推荐使用[System模块](http://phantomjs.org/api/system/)的[`system.args[0]`](http://phantomjs.org/api/system/property/args.html)
+稳定性：__不推荐使用__ - 推荐使用[System模块](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/system.md)的[`system.args[0]`](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/system.md#args)
 
 该属性只读，是当前执行的脚本文件名。
 
@@ -106,7 +106,7 @@ if (somethingIsWrong) {
 ###injectJs
 `phantom.injectJs(filename)` {Boolean}
 
-从指定的文件注入外部脚本代码到Phantom。如果在当前目录中找不到该文件，会在[`libraryPath`](http://phantomjs.org/api/phantom/property/library-path.html)指定的路径中去寻找。如果注入成功返回`true`，否则返回`false`。
+从指定的文件注入外部脚本代码到Phantom。如果在当前目录中找不到该文件，会在[`libraryPath`](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/phantom-object.md#librarypath)指定的路径中去寻找。如果注入成功返回`true`，否则返回`false`。
 
 例子：
 
