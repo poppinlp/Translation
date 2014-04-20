@@ -19,7 +19,8 @@
    * [screen-capture](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/screen-capture.md)
    * [network-monitor](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/network-monitor.md)
    * [phantom-object](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/phantom-object.md)
-   * [system](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/system.md)
+   * [system-module](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/system.md)
+   * [child-process-module](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/child-process.md)
 * HTMLTags
    * [head](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/head.md)
    * [label](https://github.com/poppinlp/Lranslation/blob/master/HTMLTags/label.md)
