@@ -22,6 +22,7 @@
    * [inter-process-communication](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/inter-process-communication.md)
    * [screen-capture](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/screen-capture.md)
    * [network-monitor](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/network-monitor.md)
+   * [phantom-object](https://github.com/poppinlp/Lranslation/edit/master/phantomJS/phantom-object.md)
 * mustache
    * [mustache-guide](https://github.com/poppinlp/Lranslation/blob/master/mustache/mustache-guide.md)
 * express
