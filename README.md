@@ -6,6 +6,8 @@
     * Documentation
     * API
         * [grunt](https://github.com/poppinlp/Lranslation/blob/master/grunt/api/grunt.md)
+        * [grunt.config](https://github.com/poppinlp/Lranslation/blob/master/grunt/api/grunt.config.md)
+        * [grunt.fail](https://github.com/poppinlp/Lranslation/blob/master/grunt/api/grunt.fail.md)
         * [exit-codes](https://github.com/poppinlp/Lranslation/blob/master/grunt/api/exit-codes.md)
 * NodeJS
     * [about-this-documentation](https://github.com/poppinlp/Lranslation/blob/master/nodejs/about-this-documentation.md)
