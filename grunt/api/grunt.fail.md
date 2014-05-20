@@ -16,7 +16,7 @@
 ###grunt.fail.warn [ALL = grunt.warn]
 展示一个警告并立即中止Grunt。如果命令行选项提供了`--force`，那么Grunt将会继续执行。`error`参数可能是一个字符串或者是一个错误对象。
 
-```
+```js
 grunt.fail.warn(error [, errorcode])
 ```
 
@@ -25,7 +25,7 @@ grunt.fail.warn(error [, errorcode])
 ###grunt.fail.fatal [ALL = grunt.fatal]
 展示一个警告并立即中止Grunt。`error`参数可能是以讹过字符串或者是以讹过错误对象。
 
-```
+```js
 grunt.fail.fatal(error [, errorcode])
 ```
 
