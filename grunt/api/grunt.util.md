@@ -65,7 +65,7 @@ grunt.util.spawn(options, doneFunction)
 
 ```js
 var options = {
-  // The command to execute. It should be in the system path.
+  // 需要被执行的命令。路径应该为系统中的路径。
   cmd: commandToExecute,
   // If specified, the same grunt bin that is currently running will be
   // spawned as the child command, instead of the "cmd" option. Defaults
