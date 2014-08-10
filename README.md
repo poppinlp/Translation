@@ -1,11 +1,11 @@
-#Lranslation
+# Lranslation
 
 一些自己翻译的东西，主要是为了方便学习。水平有限，欢迎修正。
 
 * Google Material Design
     * 参与了协同翻译工作，[网页版](http://design.1sters.com/)，[Github](https://github.com/1sters/material_design_zh)
 * Mocha
-    * [Mocha](https://poppinlp.github.io/mocha)
+    * [Mocha](https://mochacn.github.io/)
 * Grunt
     * Documentation
     * API
