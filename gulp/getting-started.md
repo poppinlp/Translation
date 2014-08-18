@@ -21,9 +21,9 @@ $ npm install --save-dev gulp
 #### 3. 在你项目的根目录创建一个 `gulpfile.js`：
 
 ```js
-var gulp = require(‘gulp’);
+var gulp = require('gulp');
 
-gulp.task(‘default’, function() {
+gulp.task('default', function() {
     // place code for your default task here
 });
 ```
