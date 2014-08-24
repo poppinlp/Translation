@@ -8,6 +8,7 @@
     * [Mocha](https://mochacn.github.io/)
 * Gulp
     * [Getting Started](https://github.com/poppinlp/Lranslation/blob/master/gulp/getting-started.md)
+    * [CLI Documentation](https://github.com/poppinlp/Lranslation/blob/master/gulp/CLI.md)
 * Grunt
     * Documentation
     * API
