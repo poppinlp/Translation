@@ -2,13 +2,14 @@
 
 一些自己翻译的东西，主要是为了方便学习。水平有限，欢迎修正。
 
-* Google Material Design
-    * 参与了协同翻译工作，[网页版](http://design.1sters.com/)，[Github](https://github.com/1sters/material_design_zh)
-* Mocha
-    * [Mocha](https://mochacn.github.io/)
 * Gulp
     * [Getting Started](https://github.com/poppinlp/Lranslation/blob/master/gulp/getting-started.md)
     * [CLI Documentation](https://github.com/poppinlp/Lranslation/blob/master/gulp/CLI.md)
+    * [API Documentation](https://github.com/poppinlp/Lranslation/blob/master/gulp/API.md)
+* Mocha
+    * [Mocha](https://mochacn.github.io/)
+* Google Material Design
+    * 参与了协同翻译工作，[网页版](http://design.1sters.com/)，[Github](https://github.com/1sters/material_design_zh)
 * Grunt
     * Documentation
     * API

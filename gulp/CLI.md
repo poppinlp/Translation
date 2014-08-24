@@ -1,5 +1,5 @@
 > 贡献者：梁鹏  
-> 翻译时间：2014年8月18日  
+> 翻译时间：2014年8月24日  
 > 原文来源：https://github.com/gulpjs/gulp/blob/master/docs/CLI.md  
 > 原文作者：gulp  
 > 原文标题：gulp CLI docs  
