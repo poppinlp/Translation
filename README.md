@@ -1,8 +1,6 @@
 # Translation
 
-__新内容已更新到 BLOG，这里留作纪念吧。[BLOG 传送门](https://github.com/poppinlp/blog)。__
-
-一些自己翻译或修改的东西，主要是为了方便学习。水平有限，欢迎修正。
+一些自己翻译或修改的东西，主要是为了方便学习。水平有限，欢迎一切 PR。
 
 * Gulp
     * [Getting Started](https://github.com/poppinlp/Lranslation/blob/master/gulp/getting-started.md)
