@@ -1,6 +1,6 @@
-> 贡献者：梁鹏  
+> 贡献者：PoppinLp  
 > 翻译时间：2014年4月20日  
-> 原文来源：https://http://phantomjs.org/api/system/  
+> 原文来源：https://phantomjs.org/api/system/  
 > 原文作者：PhantomJS  
 > 原文标题：System Module  
 

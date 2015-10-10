@@ -1,4 +1,4 @@
-> 贡献者：梁鹏  
+> 贡献者：PoppinLp  
 > 翻译时间：2013年8月29日  
 > 原文来源：https://github.com/ariya/phantomjs/wiki/Quick-Start  
 > 原文作者：PhantomJS

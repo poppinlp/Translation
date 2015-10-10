@@ -1,4 +1,4 @@
-> 贡献者：梁鹏  
+> 贡献者：PoppinLp  
 > 翻译时间：2013年9月4日  
 > 原文来源：https://github.com/ariya/phantomjs/wiki/Inter-Process-Communication  
 > 原文作者：PhantomJS  
