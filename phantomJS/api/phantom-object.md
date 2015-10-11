@@ -11,8 +11,18 @@ The interface with various PhantomJS functionalities is carried out using a new 
 - property
     - [args](#args)
     - [cookies](#cookies)
+    - [cookiesEnabled](#cookiesEnabled)
+    - [libraryPath](#libraryPath)
+    - [scriptName](#scriptName)
+    - [version](#version)
 - method
+    - [addCookie](#addCookie)
+    - [deleteCookie](#deleteCookie)
+    - [clearCookies](#clearCookies)
+    - [exit](#exit)
+    - [injectJs](#injectJs)
 - event
+    - [onError](#onError)
 
 ## args
 
@@ -66,15 +76,16 @@ The interface with various PhantomJS functionalities is carried out using a new 
 
 引入版本：PhantomJS 1.7
 
-添加一个 Cookie 到 CookieJar。添加成功返回 `true`，否则返回 `false`。
+添加一个 Cookie 到 CookieJar。
+添加成功返回 `true`，否则返回 `false`。
 
 例子：
 
 ```js
 phantom.addCookie({
-  'name': 'Added-Cookie-Name',
-  'value': 'Added-Cookie-Value',
-  'domain': '.google.com'
+    'name': 'Added-Cookie-Name',
+    'value': 'Added-Cookie-Value',
+    'domain': '.google.com'
 });
 ```
 
@@ -92,7 +103,8 @@ phantom.addCookie({
 
 引入版本：PhantomJS 1.7
 
-删除 CookieJar 中某个特定名字的 Cookier。删除成功返回 `true`，否则返回 `false`。
+删除 CookieJar 中某个特定名字的 Cookier。
+删除成功返回 `true`，否则返回 `false`。
 
 例子：
 
@@ -110,9 +122,9 @@ phantom.deleteCookie('Added-Cookie-Name');
 
 ```js
 if (somethingIsWrong) {
-  phantom.exit(1);
+    phantom.exit(1);
 } else {
-  phantom.exit(0);
+    phantom.exit(0);
 }
 ```
 
@@ -120,7 +132,8 @@ if (somethingIsWrong) {
 
 `phantom.injectJs(filename)` {boolean}
 
-Injects external script code from the specified file into the Phantom outer space. If the file cannot be found in the current directory, libraryPath is used for additional look up. This function returns true if injection is successful, otherwise it returns false.
+从指定的文件注入外部脚本代码到 Phantom。如果当前目录中不存在该文件，将会在 `libraryPath` 路径中查找。
+注入成功返回 `true`，否则返回 `false`。
 
 例子：
 
@@ -132,20 +145,22 @@ var wasSuccessful = phantom.injectJs('lib/utils.js');
 
 引入版本：PhantomJS 1.7
 
-This callback is invoked when there is a JavaScript execution error not caught by a page.onError handler. This is the closest it gets to having a global error handler in PhantomJS, and so it is a best practice to set this onError handler up in order to catch any unexpected problems. The arguments passed to the callback are the error message and the stack trace [as an Array].
+这个事件当产生了没有被 `page.onError` 处理的 JavaScript 运行时错误时触发。
+因为这是 PhantomJS 中最接近于全局错误处理的方式，所以通常建议绑定上这个 `onError` 事件以防止产生未被捕获的程序异常。
+回掉函数的参数是错误信息和相关的调用堆栈（数组）。
 
 例子：
 
 ```js
 phantom.onError = function(msg, trace) {
-  var msgStack = ['PHANTOM ERROR: ' + msg];
-  if (trace && trace.length) {
-    msgStack.push('TRACE:');
-    trace.forEach(function(t) {
-      msgStack.push(' -> ' + (t.file || t.sourceURL) + ': ' + t.line + (t.function ? ' (in function ' + t.function +')' : ''));
-    });
-  }
-  console.error(msgStack.join('\n'));
-  phantom.exit(1);
+    var msgStack = ['PHANTOM ERROR: ' + msg];
+    if (trace && trace.length) {
+        msgStack.push('TRACE:');
+        trace.forEach(function(t) {
+            msgStack.push(' -> ' + (t.file || t.sourceURL) + ': ' + t.line + (t.function ? ' (in function ' + t.function +')' : ''));
+        });
+    }
+    console.error(msgStack.join('\n'));
+    phantom.exit(1);
 };
 ```
