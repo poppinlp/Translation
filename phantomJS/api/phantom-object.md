@@ -4,25 +4,25 @@
 > 原文作者：PhantomJS  
 > 原文标题：Phantom Object  
 
-# Phantom Object
+# Phantom 对象
 
-The interface with various PhantomJS functionalities is carried out using a new host object named phantom, added as a child of the window object.
+通过 `PhantomJS` 变量实现的接口已迁移到新的宿主对象 `phantom`，并且它是 `window` 对象的一个属性。
 
 - property
     - [args](#args)
     - [cookies](#cookies)
-    - [cookiesEnabled](#cookiesEnabled)
-    - [libraryPath](#libraryPath)
-    - [scriptName](#scriptName)
+    - [cookiesEnabled](#cookiesenabled)
+    - [libraryPath](#librarypath)
+    - [scriptName](#scriptname)
     - [version](#version)
 - method
-    - [addCookie](#addCookie)
-    - [deleteCookie](#deleteCookie)
-    - [clearCookies](#clearCookies)
+    - [addCookie](#addcookie)
+    - [deleteCookie](#deletecookie)
+    - [clearCookies](#clearcookies)
     - [exit](#exit)
-    - [injectJs](#injectJs)
+    - [injectJs](#injectjs)
 - event
-    - [onError](#onError)
+    - [onError](#onerror)
 
 ## args
 
