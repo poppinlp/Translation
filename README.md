@@ -30,6 +30,7 @@
     * API
         * [phantom-object](https://github.com/poppinlp/Lranslation/blob/master/phantomJS/api/phantom-object.md)
         * [child-process](https://github.com/poppinlp/Lranslation/blob/master/phantomJS/api/child-process.md)
+        * [system](https://github.com/poppinlp/Lranslation/blob/master/phantomJS/api/system.md)
     * Doc
         * [quick-start](https://github.com/poppinlp/Lranslation/blob/master/phantomJS/doc/quick-start.md)
         * [page-automation](https://github.com/poppinlp/Lranslation/blob/master/phantomJS/doc/page-automation.md)
