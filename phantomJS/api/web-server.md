@@ -22,7 +22,7 @@ var webserver = require('webserver');
 
 ## port
 
-服务监听请求的端口号（只读）
+服务监听请求的端口号（只读）。
 
 例子：
 
@@ -46,7 +46,7 @@ var server = webserver.create();
 
 ### `request` 参数
 
-传递给回掉函数的 `request` 对象可以包含下列属性：
+传递给回掉函数的 `request` 参数，该对象可以包含下列属性：
 
 - `method`: 定义请求方式（例如 'GET', 'POST' 等）
 - `url`: The path part and query string part (if any) of the request URL
@@ -69,10 +69,12 @@ writeHead(statusCode, headers): Sends a response header to the request. The stat
 close(): Closes the HTTP connection.
 To avoid the client detecting a connection drop, remember to use write() at least once. Sending an empty string (i.e. response.write('')) would be enough if the only aim is, for example, to return an HTTP status code of 200 ("OK").
 closeGracefully(): same as close(), but ensures response headers have been sent first (and do at least a response.write(''))
-Examples
 
-Here is a simple example that always gives the same response regardless of the request:
+### 例子
 
+这是一个简单的例子，不管请求是什么总是返回相同的响应：
+
+```js
 var webserver = require('webserver');
 var server = webserver.create();
 var service = server.listen(8080, function(request, response) {
@@ -80,8 +82,11 @@ var service = server.listen(8080, function(request, response) {
   response.write('<html><body>Hello!</body></html>');
   response.close();
 });
-If you want to bind to specify address, just use ipaddress:port instead of port.
+```
 
+如果你想监听指定的地址，请使用 `ipaddress:port` 而不只是 `port`。
+
+```js
 var webserver = require('webserver');
 var server = webserver.create();
 var service = server.listen('127.0.0.1:8080', function(request, response) {
@@ -89,13 +94,20 @@ var service = server.listen('127.0.0.1:8080', function(request, response) {
   response.write('<html><body>Hello!</body></html>');
   response.close();
 });
-The value returned by server.listen() is a boolean: true if the server is launched.
+```
 
-An optional object opts can be passed between the IP/port and the callback:
+`server.listen()` 的返回值是一个布尔值，即 `true` 表示服务正常启动。
 
+在监听地址和回调函数间可以传递一个可选的对象 `opts`：
+
+```js
 var service = server.listen(8080, {
   'keepAlive': true
 }, function(request, response) {
 
 });
+```
+
+目前，`opts` 对象中唯一支持的参数是 `keepAlive`。如果设置为 `true`，那么服务器将支持 keep-alive 链接。
+
 Currently, the only supported option is keepAlive. If set to true, the webserver will support keep-alive connections. Note: servers that have keep-alive enabled must set a proper Content-Length header in their responses, otherwise clients will not know when the response is finished; additionally, response.close() must be called. See examples/serverkeepalive.js for more information.

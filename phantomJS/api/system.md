@@ -1,8 +1,8 @@
 > 贡献者： PoppinLp
-> 翻译时间：2015年10月11日
-> 原文来源：http://phantomjs.org/api/child_process/
+> 翻译时间：2015年10月16日
+> 原文来源：http://phantomjs.org/api/system/
 > 原文作者：PhantomJS
-> 原文标题：Child Process Module
+> 原文标题：System Module
 
 # 系统模块
 
@@ -23,13 +23,11 @@ var system = require('system');
 
 `system.args` {String[]}
 
-Queries and returns a list of the command-line arguments. The first one is always the script name, which is then followed by the subsequent arguments.
+查询并返回命令行参数列表。列表中第一项总是脚本名称，之后的是其他后续参数。
 
-例子：
+下面这个例子输出出所有命令行参数：
 
 ```js
-The following example prints all of the command-line arguments:
-
 var system = require('system');
 var args = system.args;
 
@@ -44,13 +42,11 @@ if (args.length === 1) {
 
 ## env
 
-system.env {Object}
+`system.env` {Object}
 
-Queries and returns a list of key-value pairs representing the environment variables.
+查询并返回表示环境变量的键值对列表。
 
-例子：
-
-The following example demonstrates the same functionality as the Unix printenv utility or the Windows set command:
+下面这个例子和 Unix 中 `printenv` 命令或者 Windows 中 `set` 命令功能类似：
 
 ```js
 var system = require('system');
@@ -63,9 +59,9 @@ Object.keys(env).forEach(function(key) {
 
 ## os
 
-Read-only. An object providing information about the operating system, including architecture, name, and version. For example:
+`system.os` {Object}
 
-例子：
+只读。表示一个提供了操作系统信息的对象，包括系统架构、名称、版本等。例如：
 
 ```js
 var system = require('system');
@@ -77,22 +73,17 @@ console.log(os.version);  // '7'
 
 ## pid
 
-system.pid {Number}
+`system.pid` {Number}
 
-Introduced: PhantomJS 1.8 Read-only. The PID (Process ID) for the currently executing PhantomJS process.
+引入版本：PhantomJS 1.8
 
-例子：
-
-```js
-var system = require('system');
-// @TODO: Finish system.pid example.
-```
+只读。表示当前执行 PhantomJS 进程的 PID（Process ID）。
 
 ## platform
 
-system.platform {String}
+`system.platform` {String}
 
-Read-only. The name of the platform, for which the value is always 'phantomjs'.
+只读。表示当前平台的名字，该值总是为 `'phantomjs'`。
 
 例子：
 
